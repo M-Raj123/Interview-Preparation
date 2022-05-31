@@ -1,6 +1,8 @@
 import java.util.*;
-public class MatrixBorderSum {
-    public static void main(String[] args) {
+public class MatrixBorderSum 
+{
+    public static void main(String[] args) 
+    {
         Scanner sc = new Scanner(System.in);
         int r = sc.nextInt(), c = sc.nextInt();
         int sum=0;
@@ -22,5 +24,5 @@ public class MatrixBorderSum {
             }
         }
         System.out.print(sum);
-	 }
+    }
 }
