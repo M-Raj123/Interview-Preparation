@@ -99,3 +99,55 @@ public class Main
     }
 }
 
+/*
+Input:
+3
+
+Output:
+a*b*c
+*d*e*
+f*g*h
+
+*/
+
+
+import java.util.*;
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+	    Scanner sc = new Scanner(System.in);
+	    int n = sc.nextInt();
+	    System.out.println("Pattern");
+	    int f1=0,ct='a'; 
+	    
+	    for(int i=0;i<n;i++)
+	    {
+	        
+	        if(i%2==0)
+	        {
+	            f1=0;
+	        }
+	        else{
+	            f1=1;
+	        }
+	       
+	        for(int j=0;j<n+(n-1);j++)
+	        {
+	            if(f1==0)
+	            {
+	                System.out.print((char)(ct++));
+			if(ct>122)  ct='a';
+	                f1=1;
+	            }
+	            else{
+	                f1=0;
+	                System.out.print("*");
+	            }
+	        }
+	        System.out.println();
+	    }
+      }
+}
+
+
