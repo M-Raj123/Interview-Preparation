@@ -151,3 +151,49 @@ public class Main
 }
 
 
+
+/*
+
+input: 4
+
+output:
+
+1*****1
+*2***2*
+**3*3**
+***4***
+**3*3**
+*2***2*
+1*****1
+
+*/
+
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+        int val=1, flag=0;
+       
+        for(int i=0;i<(n+n-1);i++)
+        {
+            for(int j=0;j<(n+n-1);j++)
+            {
+                if(i==j || (n+n-1)-i-1==j)
+                {
+                    System.out.print(val);
+                }
+                else System.out.print("*"); 
+            }
+            
+            if(flag==0) 
+            {
+                if(val==n-1) flag=1;
+                val++;
+            }else val--;
+            System.out.println();
+        } 
+    }
+}
