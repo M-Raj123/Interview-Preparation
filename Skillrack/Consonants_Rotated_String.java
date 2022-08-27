@@ -24,6 +24,7 @@ public class Hello {
 		    }
 		}
 		int p = 0;
+	        n = n%(temp.length());
 		while(p<k.length())
 		{
 		    char ch = k.charAt(p);
