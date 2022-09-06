@@ -28,7 +28,7 @@ public class Main
     
     public static void main(String[] args) 
     {
-		    Scanner sc = new Scanner(System.in);
+	Scanner sc = new Scanner(System.in);
         
         int arr[] = {1,2,11,19,23,27,35,40,52,56};
         
@@ -41,8 +41,7 @@ public class Main
             System.out.println("Found at "+index+" Index");
         }
         else System.out.println("Not Found");
-        
-	  }
+    }
 }
 
 // Time Complexity of Binary Search Algorithm is O(log n).
