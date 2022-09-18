@@ -45,25 +45,25 @@ So, 27 is printed as the output.
 */
 import java.util.*;
 public class Main {
-    public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int r = sc.nextInt(),sum=0, c = sc.nextInt();
-		int arr[][] = new int[r][c];
-		for(int i=0;i<r;i++)
-		{
-		    for(int j=0;j<c;j++)
-		    {
-		        arr[i][j]=sc.nextInt();
-		    }
-		}
+    public static void main(String[] args) 
+    {
+	Scanner sc = new Scanner(System.in);
+	int r = sc.nextInt(),sum=0, c = sc.nextInt();
 		
-		for(int i=0;i<(r/2)+(r%2);i++)
+	for(int i=0;i<r;i++)
+	{
+	    for(int j=0;j<c;j++)
+	    {
+		if(i<(r/2)+(r%2) && j<(c/2)+(c%2))
 		{
-		    for(int j=0;j<(c/2)+(c%2);j++)
-		    {
-		        sum+=arr[i][j];
-		    }
+		    sum += sc.nextInt();
 		}
-		System.out.print(sum);
- 	}
+		else
+		{
+		    sc.nextInt();
+		}
+	    }
+	}
+	System.out.print(sum);
+    }
 }
