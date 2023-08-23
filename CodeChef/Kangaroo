@@ -1,0 +1,24 @@
+/* problem statement : https://www.hackerrank.com/challenges/kangaroo/problem */
+
+public static String kangaroo(int x1, int v1, int x2, int v2) 
+{
+    int k1 = x1+v1;
+    int k2 = x2+v2;
+    int sum1 = x1, sum2 = x2 ;
+    if(k1 <= k2)
+    {
+        int temp = k1;
+        k1 = k2 ;
+        k2 = temp;
+    }
+    int i =1;
+    while(sum1!=sum2 && (i<k1 && i<k2))
+    {
+        sum1 += v1;
+        sum2 += v2;
+        i++;   
+    }
+  
+    if(sum1==sum2) return "YES";
+    else return "NO";      
+}
