@@ -1,0 +1,17 @@
+/* problem statement : https://www.hackerrank.com/challenges/the-birthday-bar */
+
+public static int birthday(List<Integer> s, int d, int m) 
+{
+      int sum=0,split_count=0;
+      for(int i=0;i<m;i++)
+      {
+          sum += s.get(i);
+      }
+      if(sum==d) split_count+=1;
+      for(int i=m;i<s.size();i++)
+      {
+          sum = sum + s.get(i) - s.get(i-m);
+          if(sum==d) split_count+=1; 
+      }
+      return split_count;
+}
