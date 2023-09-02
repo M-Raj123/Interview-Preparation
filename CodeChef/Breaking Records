@@ -1,0 +1,32 @@
+/* problem statement: https://www.hackerrank.com/challenges/breaking-best-and-worst-records */
+
+public static List<Integer> breakingRecords(List<Integer> scores) 
+{
+      int itr = 0, ct_1 = 0, ct_2 = 0, fixMax=0,fixMin=0 ;
+      for(int i:scores)
+      {
+          if(itr==0)
+          {
+              fixMin = i;
+              fixMax = i;
+          }
+          
+          if(i<fixMin)
+          {
+              fixMin = i;
+              ct_1++;
+          }
+          if(i>fixMax)
+          {
+              fixMax = i;
+              ct_2++;
+          }
+          itr++;
+      }
+      
+      List<Integer> al = new ArrayList<Integer>();
+      al.add(ct_2);
+      al.add(ct_1);
+      
+      return al;
+}
