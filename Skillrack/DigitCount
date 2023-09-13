@@ -1,0 +1,28 @@
+/* zoho
+
+input : 15  ,  21 
+output: 21  ,  33
+ 
+explanation : 123456789101112131415 
+              totalDigit -> 21
+
+*/
+class DigitCount
+{
+  public static void main(String[] agrs)
+  {
+      Scanner sc = new Scanner(System.in);
+      int Input = sc.nextInt(), count = 0 ;
+      for(int i=1;i<=Input;i++)
+      {
+        int k = i;
+        while(k>0)
+        {
+            k=k/10;
+            count++;
+        }
+      }
+      System.out.print(count);
+      sc.close();
+  }
+}
