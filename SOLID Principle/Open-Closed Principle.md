@@ -60,7 +60,7 @@ By following the Open-Closed Principle, we can create code that is more maintain
 
 
 
-Applied LSP
+Applied OCP
 
 ```
 #include <iostream>
@@ -112,6 +112,68 @@ int main() {
 
     printArea(rectangle); // 50
     printArea(square);    // 100
+
+    return 0;
+}
+```
+
+
+
+
+
+Another example
+
+Imagine you have a class called PaymentProcessor that processes payments for an online store. Initially, the PaymentProcessor class only supports processing payments using credit cards. However, you want to extend its functionality to also support processing payments using PayPal.
+
+
+```
+#include <iostream>
+#include <string>
+
+// Base class for payment processing
+class PaymentProcessor {
+public:
+    virtual void processPayment(double amount) = 0; // Pure virtual function
+};
+
+// Credit card payment processor
+class CreditCardPaymentProcessor : public PaymentProcessor {
+public:
+    void processPayment(double amount) override {
+        std::cout << "Processing credit card payment of $" << amount << std::endl;
+    }
+};
+
+```
+
+Extended Functionality
+Now, to add support for PayPal payments, you create a new class PayPalPaymentProcessor that extends PaymentProcessor.
+
+```
+// PayPal payment processor
+class PayPalPaymentProcessor : public PaymentProcessor {
+public:
+    void processPayment(double amount) override {
+        std::cout << "Processing PayPal payment of $" << amount << std::endl;
+    }
+};
+```
+
+Usage
+
+you can use either payment processor without modifying the existing code for PaymentProcessor or CreditCardPaymentProcessor.
+
+```
+void processPayment(PaymentProcessor* processor, double amount) {
+    processor->processPayment(amount);
+}
+
+int main() {
+    CreditCardPaymentProcessor creditCardProcessor;
+    PayPalPaymentProcessor payPalProcessor;
+
+    processPayment(&creditCardProcessor, 100.00); // Processing credit card payment
+    processPayment(&payPalProcessor, 150.00);     // Processing PayPal payment
 
     return 0;
 }
