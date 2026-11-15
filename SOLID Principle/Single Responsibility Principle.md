@@ -4,7 +4,7 @@ In C++, SRP can be implemented by dividing the responsibilities of a class into 
 
 Let’s consider an example of a class named Customer which is responsible for calculating the final bill of a customer. In its current form, the Customer class has several responsibilities, such as maintaining the customer details, calculating the final bill, and generating an invoice.
 
-
+```
 class Customer {
 private:
   string name;
@@ -21,13 +21,13 @@ public:
   float calculateTotalAmount();
   string generateInvoice();
 };
-
+```
 
 As we can see, the Customer class is responsible for multiple tasks, such as maintaining customer details, calculating the final bill, and generating an invoice. This violates the Single Responsibility Principle, as the class has multiple reasons to change. For instance, if the calculation of the final bill is changed, then the Customer class needs to be modified, even though it is not related to the customer details or the generation of invoices.
 
 To implement SRP, we can create separate classes for each of these responsibilities. For example, we can create a CustomerDetails class to handle the customer details, a BillingCalculator class to calculate the final bill, and an InvoiceGenerator class to generate the invoice.
 
-
+```
 class CustomerDetails {
 private:
   string name;
@@ -52,7 +52,7 @@ class InvoiceGenerator {
 public:
   string generateInvoice(CustomerDetails customerDetails, BillingCalculator billingCalculator);
 };
-
+```
 
 
 By dividing the responsibilities of the Customer class into smaller, more focused classes, each class has only one responsibility, which makes the code more maintainable and scalable. If any changes are required in any of these classes, only that class needs to be modified, rather than the entire Customer class. This leads to cleaner and more maintainable code, which is easier to understand, modify and test.  
